@@ -1,13 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 const ProductCard = ({ product }) => {
 
+    let navigate = useNavigate();
    
   return (
     <div className="bg-white rounded-xl p-5 shadow-md hover:shadow-xl transition">
       
       {/* Image */}
-      <div className="h-56 flex items-center justify-center">
+      <div onClick={() => navigate(`/detail/${product.id}`)} className="h-56 flex items-center justify-center">
         <img
           src={product.image}
           alt={product.title}

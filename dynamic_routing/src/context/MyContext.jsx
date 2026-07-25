@@ -6,7 +6,9 @@ export const MyStore = createContext();
 
 export const ContextProvider = ({children}) => {
     const [productsData, setProductsData] = useState([])
-    return <MyStore.Provider value={{productsData, setProductsData}}>
+    const [singleProductData, setSingleProductData] = useState([])
+
+    return <MyStore.Provider value={{productsData, setProductsData, singleProductData, setSingleProductData}}>
         {children}
     </MyStore.Provider >;
 };
